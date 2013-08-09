@@ -1,14 +1,14 @@
 package javax.util.arraylist;
 
 import java.util.ArrayList;
-import javax.util.ArrayListE;
+import javax.util.ArrayListInterface;
 
 /**
  * @author Pedro Marcelo de Sá Alves
  * @since August 7, 2013
  */
 
-public final class ArrayListString extends ArrayList<String> implements ArrayListE {
+public final class ArrayListString extends ArrayList<String> implements ArrayListInterface<String> {
 
 	private static final long serialVersionUID = -7708170309614457628L;
 	private transient String[] elements;
@@ -228,7 +228,7 @@ public final class ArrayListString extends ArrayList<String> implements ArrayLis
 		return;
 	}
 
-	private String[] getArray() {
+	public String[] getArray() {
 		Object obj[] = super.toArray();
 		String str[] = new String[obj.length];
 
