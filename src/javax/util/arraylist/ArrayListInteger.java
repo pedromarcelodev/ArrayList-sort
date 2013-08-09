@@ -2,14 +2,14 @@ package javax.util.arraylist;
 
 import java.util.ArrayList;
 
-import javax.util.ArrayListE;
+import javax.util.ArrayListInterface;
 
 /**
  * @author Pedro Marcelo de Sá Alves
  * @since August 9, 2013
  */
 public final class ArrayListInteger extends ArrayList<Integer> implements
-		ArrayListE {
+		ArrayListInterface<Integer> {
 
 	private static final long serialVersionUID = -2842976440641442488L;
 	private transient Integer[] elements;
@@ -45,7 +45,7 @@ public final class ArrayListInteger extends ArrayList<Integer> implements
 		quicksortDesc(elements, 0, elements.length - 1);
 	}
 
-	protected void quicksortAsc(Integer[] vetor, int p, int r) {
+	private void quicksortAsc(Integer[] vetor, int p, int r) {
 		if (p < r) {
 			int q = partitionAsc(vetor, p, r);
 			quicksortAsc(vetor, p, q - 1);
@@ -53,7 +53,7 @@ public final class ArrayListInteger extends ArrayList<Integer> implements
 		}
 	}
 
-	protected int partitionAsc(Integer[] vetor, int p, int r) {
+	private int partitionAsc(Integer[] vetor, int p, int r) {
 		int x = vetor[r];
 		int aux;
 		int i = p - 1;
@@ -72,7 +72,7 @@ public final class ArrayListInteger extends ArrayList<Integer> implements
 		return i + 1;
 	}
 
-	protected void quicksortDesc(Integer[] vetor, int p, int r) {
+	private void quicksortDesc(Integer[] vetor, int p, int r) {
 		if (p < r) {
 			int q = partitionDesc(vetor, p, r);
 			quicksortDesc(vetor, p, q - 1);
@@ -80,7 +80,7 @@ public final class ArrayListInteger extends ArrayList<Integer> implements
 		}
 	}
 
-	protected int partitionDesc(Integer[] vetor, int p, int r) {
+	private int partitionDesc(Integer[] vetor, int p, int r) {
 		Integer x = vetor[r];
 		Integer aux;
 		int i = p - 1;
@@ -99,15 +99,16 @@ public final class ArrayListInteger extends ArrayList<Integer> implements
 		return i + 1;
 	}
 
-	protected Integer[] getArray() {
-		Object obj[] = super.toArray();
-		Integer aux[] = new Integer[obj.length];
-
-		for (int i = 0; i < aux.length; i++) {
-			aux[i] = Integer.parseInt(String.valueOf(obj[i]));
+	@Override
+	public Integer[] getArray() {
+		Object[] obj = super.toArray();
+		Integer[] in = new Integer[obj.length];
+		
+		for (int i = 0; i < in.length; i++) {
+			in[i] = Integer.parseInt(String.valueOf(obj[i]));
 		}
-
-		return aux;
+		return in;
 	}
+
 
 }
