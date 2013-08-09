@@ -4,8 +4,15 @@ import java.util.ArrayList;
 import javax.util.ArrayListInterface;
 
 /**
+ * A classe ArrayListString é uma subclasse de ArrayList<String> e ela
+ * implementa métodos de ordenação para a instância de ArrayListString. Os
+ * métodos utilizam bubble sort com método recursivo para comparação de letras
+ * para ordenação e podem ser ordenados tanto de forma ascendente como de forma
+ * descendente.
+ * 
  * @author Pedro Marcelo de Sá Alves
  * @since August 7, 2013
+ * @see ArrayList
  */
 
 public final class ArrayListString extends ArrayList<String> implements ArrayListInterface<String> {
