@@ -5,8 +5,14 @@ import java.util.ArrayList;
 import javax.util.ArrayListInterface;
 
 /**
+ * A classe ArrayListDouble é uma subclasse de ArrayList<Double> e ela
+ * implementa métodos de ordenação para a instância de ArrayListDouble.
+ * Os métodos utilizam quick sort para ordenação e podem ser ordenados
+ * tanto de forma ascendente como de forma descendente.
+ * 
  * @author Pedro Marcelo de Sá Alves
  * @since August 9, 2013
+ * @see ArrayList
  */
 public final class ArrayListDouble extends ArrayList<Double> implements ArrayListInterface<Double>{
 
