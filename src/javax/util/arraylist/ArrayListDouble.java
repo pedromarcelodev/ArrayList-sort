@@ -5,9 +5,8 @@ import java.util.ArrayList;
 import javax.util.ArrayListInterface;
 
 /**
- * 
  * @author Pedro Marcelo de Sá Alves
- *
+ * @since August 9, 2013
  */
 public final class ArrayListDouble extends ArrayList<Double> implements ArrayListInterface<Double>{
 
